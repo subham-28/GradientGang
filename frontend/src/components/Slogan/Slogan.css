@@ -1,0 +1,24 @@
+.slogan {
+  text-align: center;
+  margin: 50px 0;
+  opacity: 0;
+  transform: translateY(25px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slogan-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  font-style: italic;
+}
+
+.slogan.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.slogan.hide {
+  opacity: 0;
+  transform: translateY(-50px) scale(0.95);
+}

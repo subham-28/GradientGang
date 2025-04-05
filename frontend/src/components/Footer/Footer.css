@@ -1,0 +1,85 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#root,
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.footer {
+  background-color: #121212;
+  color: white;
+  padding: 40px 0;
+  text-align: start;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.footer-logo h2 {
+  font-size: 1.8rem;
+}
+
+.footer-links ul,
+.footer-social .social-icons {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li,
+.footer-social .social-icons li {
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.footer-links li:hover,
+.footer-social .social-icons li:hover {
+  color: #ab02f4;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: start;
+}
+
+.social-icons li {
+  font-size: 1.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: start;
+  }
+
+  .social-icons {
+    justify-content: start;
+  }
+}

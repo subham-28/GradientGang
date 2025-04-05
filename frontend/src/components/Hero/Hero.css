@@ -1,0 +1,77 @@
+.Hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    align-items: center;
+    gap: 50px;
+    padding: 50px 50px 50px 50px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .hero-text {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .hero-text p {
+    color: rgba(255, 255, 255, 0.668);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-buttons {
+    margin-top: 50px;
+    display: flex;
+    gap: 18px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .convert-btn {
+    background-color: white;
+    color: black;
+    border: none;
+  }
+  
+  .convert-btn:hover {
+    background-color: rgba(0, 0, 0, 0.538);
+    color: whitesmoke;
+  }
+  
+  .learn-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  .learn-btn:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 5s;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 50%;
+  }
+  
