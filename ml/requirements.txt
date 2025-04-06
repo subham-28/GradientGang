@@ -2,4 +2,14 @@ fastapi
 uvicorn
 joblib
 scikit-learn
+wheel
+word2number
+textblob
+nltk
+spacy
+pymongo
+fastapi
+uvicorn
+pydantic
+
 
