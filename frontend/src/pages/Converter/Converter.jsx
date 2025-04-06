@@ -13,7 +13,7 @@ function Converter() {
     setIsLoading(true);
     setTimeout(async () => {
       try {
-        const response = await axios.post("http://localhost:5000/convert", {
+        const response = await axios.post("https://gradientgang.onrender.com/convert", {
           recipe_text: inputText, // key must match FastAPI model
         });
         console.log("Backend Response:", response.data);
