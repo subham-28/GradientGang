@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors());
 
 // FastAPI endpoint
-const FASTAPI_URL = "http://34.55.80.43:8000/convert/";
+const FASTAPI_URL = "https://gradientgang-ml.onrender.com/convert";
 
 app.post("/convert", async (req, res) => {
   const { recipe_text } = req.body;
