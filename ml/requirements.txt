@@ -13,5 +13,4 @@ uvicorn
 pydantic
 numpy 
 pandas 
-re
 
