@@ -13,4 +13,4 @@ uvicorn
 pydantic
 numpy 
 pandas 
-
+en_core_web_sm
