@@ -11,5 +11,6 @@ pymongo
 fastapi
 uvicorn
 pydantic
-
+numpy 
+pandas 
 

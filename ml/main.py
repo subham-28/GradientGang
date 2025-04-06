@@ -12,8 +12,16 @@ from predict_missing_densities import predict_densities,add_prediction_to_db
 nltk.download('stopwords')
 nltk.download('punkt_tab')
 
-#loadind the spacy model
+import importlib.util
+
+# Check if model is already installed
+if importlib.util.find_spec("en_core_web_sm") is None:
+    from spacy.cli import download
+    download("en_core_web_sm")
+
+# Now load it
 nlp = spacy.load("en_core_web_sm")
+
 
 UNIT_MAPPING = ['tsp', 'teaspoon', 't', 'teaspoon', 'tbsp', 'tablespoon', 'tbs', 'tablespoon','T', 'tablespoon', 'c', 'cup', 'fl oz', 'fluid ounce', 'pt', 'pint', 'qt', 'quart','gal', 'gallon', 'cp', 'cup', 'tablespon', 'tablespoon', 'teaspon', 'teaspoon','cups', 'cup', 'tbsps', 'tablespoon', 'tsps', 'teaspoon', 'g', 'gram', 'grams', 'gram',
 'kg', 'kilogram', 'oz', 'ounce', 'lb', 'pound','t']
