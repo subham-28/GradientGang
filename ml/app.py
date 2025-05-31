@@ -3,7 +3,8 @@ from pydantic import BaseModel
 from main import convert_to_grams
 from predict_missing_densities import predict_densities, add_prediction_to_db
 from pymongo import MongoClient
-
+import os
+import uvicorn
 # Initialize FastAPI app
 app = FastAPI()
 
@@ -42,3 +43,7 @@ async def convert_ingredient(input_data: IngredientInput):
         elif predicted_type in ["Liquid", "liquid"]:
             return {"message": f"{recipe_text} is approximately {converted_weight:.2f} milliliters."}
     return {"message": "Could not convert the ingredient."}
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))  # Cloud Run provides PORT=8080
+    uvicorn.run("app:app", host="0.0.0.0", port=port)
