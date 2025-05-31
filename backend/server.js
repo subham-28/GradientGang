@@ -1,22 +1,23 @@
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
+const path = require("path");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-// FastAPI endpoint
-const FASTAPI_URL = "https://gradientgang-ml.onrender.com/convert";
+// Serve built frontend
+app.use(express.static(path.join(__dirname, "frontend")));
+
+// FastAPI Cloud Run endpoint
+const FASTAPI_URL = "https://gramify-941292204609.asia-south1.run.app/convert";
 
 app.post("/convert", async (req, res) => {
   const { recipe_text } = req.body;
 
   try {
-    // Send POST request to FastAPI server
     const response = await axios.post(FASTAPI_URL, { recipe_text });
-
-    // Send the FastAPI response back to client
     res.json({ result: response.data.message });
   } catch (error) {
     console.error("Error calling FastAPI:", error.message);
@@ -24,7 +25,13 @@ app.post("/convert", async (req, res) => {
   }
 });
 
-const PORT = 5000;
+// Fallback to index.html (for client-side routing)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "index.html"));
+});
+
+// Cloud Run expects port 8080
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
